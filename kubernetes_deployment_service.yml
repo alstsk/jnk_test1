@@ -1,3 +1,4 @@
+---
 apiVersion: apps/v1
 kind: Deployment
 metadata:
@@ -15,14 +16,11 @@ spec:
         app: nginx-coinFK1
     spec:
       containers:
-      - name: nodeserver
-        image: alstsk/nginx-coinFK1:v1
-        ports:
+        - name: nginx-coinFK1
+      image: alstsk/nginx-coinFK1:v1
+      ports:
         - containerPort: 3000
-        
-        
 ---
-
 apiVersion: v1
 kind: Service
 metadata:
@@ -32,7 +30,7 @@ spec:
     app: nginx-coinFK1
   type: NodePort
   ports:
-  - protocol: TCP
-    port: 80
-    targetPort: 80
-    nodePort: 31111
+    - protocol: TCP
+      port: 80
+      targetPort: 80
+      nodePort: 31111
