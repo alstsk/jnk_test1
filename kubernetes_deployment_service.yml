@@ -1,22 +1,22 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: nodeapp-deployment
+  name: nginx-coinFK1-deployment
   labels:
-    app: nodeapp
+    app: nginx-coinFK1
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: nodeapp
+      app: nginx-coinFK1
   template:
     metadata:
       labels:
-        app: nodeapp 
+        app: nginx-coinFK1
     spec:
       containers:
       - name: nodeserver
-        image: thetips4you/nodeapp:latest
+        image: alstsk/nginx-coinFK1:v1
         ports:
         - containerPort: 3000
         
@@ -26,14 +26,13 @@ spec:
 apiVersion: v1
 kind: Service
 metadata:
-  name: nodeapp-service
+  name: nginx-coinFK1-service
 spec:
   selector:
-    app: nodeapp 
-  type: LoadBalancer
+    app: nginx-coinFK1
+  type: NodePort
   ports:
   - protocol: TCP
-    port: 5000
-    targetPort: 3000
-    nodePort: 31110
-
+    port: 80
+    targetPort: 80
+    nodePort: 31111
