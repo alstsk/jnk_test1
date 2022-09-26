@@ -11,7 +11,7 @@ pipeline {
 
     stage('Checkout Source') {
       steps {
-        git 'https://github.com/alstsk/jnk_test1.git'
+        git branch: 'main', credentialsId: 'git_pass_alstsk', url: 'https://github.com/alstsk/jnk_test1.git'
       }
     }
 
