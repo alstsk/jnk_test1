@@ -2,32 +2,32 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: nginx-coinFK1-deployment
+  name: nginx-ace-gam2-deployment
   labels:
-    app: nginx-coinFK1
+    app: nginx-ace-gam2
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: nginx-coinFK1
+      app: nginx-ace-gam2
   template:
     metadata:
       labels:
-        app: nginx-coinFK1
+        app: nginx-ace-gam2
     spec:
       containers:
-        - name: nginx-coinFK1
-      image: alstsk/nginx-coinFK1:v1
+        - name: nginx-ace-gam2
+      image: alstsk/nginx-ace-gam2:v1
       ports:
         - containerPort: 3000
 ---
 apiVersion: v1
 kind: Service
 metadata:
-  name: nginx-coinFK1-service
+  name: nginx-ace-gam2-service
 spec:
   selector:
-    app: nginx-coinFK1
+    app: nginx-ace-gam2
   type: NodePort
   ports:
     - protocol: TCP
