@@ -11,7 +11,7 @@ pipeline {
 
     stage('Checkout Source') {
       steps {
-        https://github.com/alstsk/jnk_test1.git
+        git 'https://github.com/alstsk/jnk_test1.git'
       }
     }
 
