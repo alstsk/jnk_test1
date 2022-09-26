@@ -2,7 +2,7 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: nginx-ace-gam2-deployment
+  name: nginx-ace-gam2
   labels:
     app: nginx-ace-gam2
 spec:
@@ -24,7 +24,7 @@ spec:
 apiVersion: v1
 kind: Service
 metadata:
-  name: nginx-ace-gam2-service
+  name: nginx-ace-gam2
 spec:
   selector:
     app: nginx-ace-gam2
