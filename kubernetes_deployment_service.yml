@@ -17,9 +17,9 @@ spec:
     spec:
       containers:
         - name: nginx-ace-gam2
-      image: alstsk/nginx-ace-gam2
-      ports:
-        - containerPort: 3000
+          image: alstsk/nginx-ace-gam2
+          ports:
+          - containerPort: 3000
 ---
 apiVersion: v1
 kind: Service
